@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr. Tree — มิสเตอร์ทรี | Natural Health & Wellness</title>
+<title>Mr. Tree — มิสเตอร์ทรี | ผลิตภัณฑ์เสริมสุขภาพจากธรรมชาติ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -22,13 +25,13 @@
 }
 html{scroll-behavior:smooth}
 body{
-  font-family:'Georgia','Times New Roman',serif;
+  font-family:'Prompt',sans-serif;
   background:var(--cr);
   color:var(--fg);
   line-height:1.6;
   overflow-x:hidden;
 }
-.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.sans{font-family:'Prompt',sans-serif}
 
 /* NAV */
 nav{
@@ -48,18 +51,18 @@ nav{
   color:var(--wg);
 }
 .nav-en{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:'Prompt',sans-serif;
   font-size:.95rem;font-weight:700;letter-spacing:.08em;
   text-transform:uppercase;color:var(--fg);line-height:1;
 }
 .nav-th{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:'Prompt',sans-serif;
   font-size:.65rem;color:var(--gd);letter-spacing:.12em;
 }
 .nav-links{display:flex;align-items:center;gap:2.25rem;list-style:none}
 .nav-links a{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;
+  font-family:'Prompt',sans-serif;
+  font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;
   text-decoration:none;color:var(--tm);transition:color .2s;
 }
 .nav-links a:hover{color:var(--fg)}
@@ -69,6 +72,34 @@ nav{
   transition:background .2s!important;
 }
 .nav-shop:hover{background:var(--sg)!important}
+.nav-toggle{
+  display:none;
+  background:none;border:none;cursor:pointer;
+  color:var(--fg);padding:.25rem;
+  align-items:center;justify-content:center;
+}
+.nav-dropdown{
+  display:none;
+  position:absolute;top:100%;left:0;right:0;
+  background:rgba(245,239,224,0.97);
+  backdrop-filter:blur(14px);
+  box-shadow:0 8px 24px rgba(28,53,40,.12);
+  flex-direction:column;gap:0;
+  list-style:none;padding:.75rem 0;
+}
+.nav-dropdown.open{display:flex}
+.nav-dropdown a{
+  font-family:'Prompt',sans-serif;
+  font-size:.9rem;letter-spacing:.04em;
+  text-decoration:none;color:var(--tm);
+  padding:.75rem 2rem;transition:background .2s,color .2s;display:block;
+}
+.nav-dropdown a:hover{color:var(--fg);background:rgba(28,53,40,.05)}
+.nav-dropdown .nav-shop{
+  margin:.5rem 2rem .25rem;border-radius:100px;
+  padding:.65rem 1.4rem;text-align:center;
+  display:block;
+}
 
 /* HERO — full-width dark split */
 .hero{
@@ -89,27 +120,27 @@ nav{
 }
 .hero-tag{
   display:inline-flex;align-items:center;gap:.6rem;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  font-family:'Prompt',sans-serif;
+  font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;
   color:var(--wg);margin-bottom:2.5rem;
 }
 .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--wg);flex-shrink:0}
 .hero-h1{
-  font-size:clamp(3rem,5.5vw,6rem);line-height:1.0;
-  color:var(--cr);font-weight:400;margin-bottom:1.75rem;
+  font-size:clamp(2.4rem,5.5vw,6rem);line-height:1.1;
+  color:var(--cr);font-weight:600;margin-bottom:1.75rem;
 }
-.hero-h1 em{font-style:italic;color:var(--ls)}
+.hero-h1 em{color:var(--ls);font-style:normal}
 .hero-p{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:1rem;line-height:1.75;color:rgba(213,232,208,.75);
-  max-width:400px;margin-bottom:3rem;
+  font-family:'Prompt',sans-serif;
+  font-size:1rem;line-height:1.8;color:rgba(213,232,208,.75);
+  max-width:400px;margin-bottom:3rem;font-weight:300;
 }
 .hero-btns{display:flex;align-items:center;gap:1.75rem;flex-wrap:wrap}
 .btn-a{
   display:inline-flex;align-items:center;gap:.6rem;
   padding:.9rem 2rem;border-radius:100px;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.875rem;text-decoration:none;transition:all .25s;letter-spacing:.04em;
+  font-family:'Prompt',sans-serif;
+  font-size:.875rem;text-decoration:none;transition:all .25s;letter-spacing:.02em;
 }
 .btn-solid{background:var(--wg);color:var(--fg)}
 .btn-solid:hover{background:var(--gd);transform:translateY(-1px)}
@@ -127,11 +158,11 @@ nav{
 .hc-stat{text-align:center}
 .hc-num{
   display:block;font-size:1.6rem;font-weight:700;color:var(--fg);
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1;
+  font-family:'Prompt',sans-serif;line-height:1;
 }
 .hc-lbl{
-  font-size:.7rem;color:var(--tl);margin-top:.2rem;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:.04em;
+  font-size:.65rem;color:var(--tl);margin-top:.2rem;
+  font-family:'Prompt',sans-serif;letter-spacing:.02em;font-weight:400;
 }
 
 /* TAPE */
@@ -142,8 +173,8 @@ nav{
 }
 .tape-item{
   display:inline-flex;align-items:center;gap:.9rem;padding:0 2rem;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
+  font-family:'Prompt',sans-serif;
+  font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
   color:rgba(28,53,40,.85);
 }
 .tape-sep{width:4px;height:4px;border-radius:50%;background:var(--fg);opacity:.4;flex-shrink:0}
@@ -152,8 +183,8 @@ nav{
 /* SECTION LABEL */
 .slabel{
   display:inline-flex;align-items:center;gap:.65rem;margin-bottom:1.75rem;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gd);
+  font-family:'Prompt',sans-serif;
+  font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gd);
 }
 .slabel-line{width:28px;height:1px;background:var(--gd);flex-shrink:0}
 
@@ -163,8 +194,8 @@ nav{
   align-items:center;padding:9rem 5rem;max-width:1440px;margin:0 auto;
 }
 .about-left{}
-.about-h2{font-size:clamp(2.5rem,4vw,4.25rem);line-height:1.05;font-weight:400;color:var(--fg)}
-.about-h2 em{font-style:italic;color:var(--ls)}
+.about-h2{font-size:clamp(2.2rem,4vw,4.25rem);line-height:1.1;font-weight:600;color:var(--fg)}
+.about-h2 em{color:var(--ls);font-style:normal}
 .about-img-wrap{
   position:relative;margin-top:2.5rem;
   display:inline-block;
@@ -176,15 +207,15 @@ nav{
   position:absolute;top:-1.5rem;right:-3rem;
   background:var(--fg);color:var(--cr);
   padding:1.1rem 1.25rem;border-radius:10px;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:'Prompt',sans-serif;
   text-align:center;
 }
 .about-img-badge span{display:block;font-size:2rem;font-weight:700;color:var(--wg);line-height:1}
-.about-img-badge small{font-size:.65rem;letter-spacing:.06em;opacity:.8}
+.about-img-badge small{font-size:.65rem;letter-spacing:.04em;opacity:.8}
 .about-right{display:flex;flex-direction:column;gap:2.25rem}
 .about-text{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:1.05rem;line-height:1.8;color:var(--tm);
+  font-family:'Prompt',sans-serif;
+  font-size:1rem;line-height:1.85;color:var(--tm);font-weight:300;
 }
 .about-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .pillar{
@@ -196,12 +227,12 @@ nav{
   display:flex;align-items:center;justify-content:center;color:var(--sg);
 }
 .pillar h4{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:'Prompt',sans-serif;
   font-size:.875rem;font-weight:600;color:var(--fg);
 }
 .pillar p{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.78rem;color:var(--tl);line-height:1.6;
+  font-family:'Prompt',sans-serif;
+  font-size:.78rem;color:var(--tl);line-height:1.7;font-weight:300;
 }
 
 /* PRODUCTS — dark section */
@@ -210,12 +241,12 @@ nav{
   display:flex;align-items:flex-end;justify-content:space-between;
   margin-bottom:3.5rem;max-width:1340px;margin-left:auto;margin-right:auto;
 }
-.products-h2{font-size:clamp(2.5rem,4vw,4rem);color:var(--cr);font-weight:400;line-height:1.05}
-.products-h2 em{font-style:italic;color:var(--ls)}
+.products-h2{font-size:clamp(2.2rem,4vw,4rem);color:var(--cr);font-weight:600;line-height:1.1}
+.products-h2 em{color:var(--ls);font-style:normal}
 .view-all{
   display:inline-flex;align-items:center;gap:.4rem;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.8rem;letter-spacing:.1em;color:var(--ps);text-decoration:none;
+  font-family:'Prompt',sans-serif;
+  font-size:.8rem;letter-spacing:.05em;color:var(--ps);text-decoration:none;
   border-bottom:1px solid rgba(213,232,208,.35);padding-bottom:2px;
   transition:color .2s;
 }
@@ -247,18 +278,18 @@ nav{
 .pc-body{padding:1.4rem;flex:1;display:flex;flex-direction:column}
 .pc-badge{
   display:inline-block;background:var(--wg);color:var(--fg);
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  font-family:'Prompt',sans-serif;
+  font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   padding:.25rem .7rem;border-radius:100px;margin-bottom:.7rem;
 }
-.pc-name{font-size:1.15rem;color:var(--cr);font-weight:400;margin-bottom:.45rem}
+.pc-name{font-size:1.1rem;color:var(--cr);font-weight:500;margin-bottom:.45rem}
 .pc-desc{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.8rem;color:rgba(213,232,208,.65);line-height:1.65;flex:1;margin-bottom:1.25rem;
+  font-family:'Prompt',sans-serif;
+  font-size:.8rem;color:rgba(213,232,208,.65);line-height:1.7;flex:1;margin-bottom:1.25rem;font-weight:300;
 }
 .pc-foot{display:flex;align-items:center;justify-content:space-between}
 .pc-price{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:'Prompt',sans-serif;
   font-size:1.1rem;font-weight:700;color:var(--wg);
 }
 .pc-add{
@@ -272,11 +303,11 @@ nav{
 /* BENEFITS */
 .benefits{padding:9rem 5rem;max-width:1440px;margin:0 auto}
 .benefits-hd{text-align:center;margin-bottom:5rem}
-.benefits-hd h2{font-size:clamp(2.5rem,4vw,4.25rem);font-weight:400;color:var(--fg);line-height:1.05}
-.benefits-hd h2 em{font-style:italic;color:var(--ls)}
+.benefits-hd h2{font-size:clamp(2.2rem,4vw,4.25rem);font-weight:600;color:var(--fg);line-height:1.1}
+.benefits-hd h2 em{color:var(--ls);font-style:normal}
 .benefits-hd p{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:1rem;color:var(--tl);max-width:460px;margin:.9rem auto 0;line-height:1.75;
+  font-family:'Prompt',sans-serif;
+  font-size:1rem;color:var(--tl);max-width:480px;margin:.9rem auto 0;line-height:1.8;font-weight:300;
 }
 .benefits-body{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .img-stack{position:relative;padding-bottom:3rem;padding-right:3rem}
@@ -295,11 +326,11 @@ nav{
 }
 .img-chip span{
   display:block;font-size:2rem;font-weight:700;line-height:1;
-  color:var(--wg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:var(--wg);font-family:'Prompt',sans-serif;
 }
 .img-chip small{
-  font-size:.68rem;opacity:.75;letter-spacing:.04em;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:.68rem;opacity:.75;letter-spacing:.02em;
+  font-family:'Prompt',sans-serif;font-weight:300;
 }
 .blist{display:flex;flex-direction:column;gap:0}
 .bitem{
@@ -309,14 +340,14 @@ nav{
 .bitem:first-child{padding-top:0}
 .bitem:last-child{border-bottom:none;padding-bottom:0}
 .bnum{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:'Prompt',sans-serif;
   font-size:.65rem;color:var(--gd);letter-spacing:.1em;font-weight:700;
   flex-shrink:0;padding-top:.3rem;
 }
-.btitle{font-size:1.15rem;color:var(--fg);font-weight:400;margin-bottom:.35rem}
+.btitle{font-size:1.1rem;color:var(--fg);font-weight:500;margin-bottom:.35rem}
 .bdesc{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.85rem;color:var(--tl);line-height:1.7;
+  font-family:'Prompt',sans-serif;
+  font-size:.85rem;color:var(--tl);line-height:1.75;font-weight:300;
 }
 
 /* TESTIMONIALS */
@@ -325,17 +356,17 @@ nav{
 .testi-hd{
   display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;
 }
-.testi-h2{font-size:clamp(2rem,3.5vw,3.5rem);color:var(--fg);font-weight:400;line-height:1.1}
-.testi-h2 em{font-style:italic;color:var(--sg)}
+.testi-h2{font-size:clamp(2rem,3.5vw,3.5rem);color:var(--fg);font-weight:600;line-height:1.1}
+.testi-h2 em{color:var(--sg);font-style:normal}
 .rtg-wrap{text-align:right}
 .rtg-num{
   display:block;font-size:3rem;font-weight:700;color:var(--fg);line-height:1;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:'Prompt',sans-serif;
 }
 .rtg-stars{display:flex;gap:.2rem;justify-content:flex-end;margin:.4rem 0;color:var(--gd)}
 .rtg-note{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.72rem;color:var(--tl);
+  font-family:'Prompt',sans-serif;
+  font-size:.72rem;color:var(--tl);font-weight:300;
 }
 .tgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem}
 .tc{
@@ -343,16 +374,16 @@ nav{
   display:flex;flex-direction:column;gap:1.25rem;
 }
 .tc-stars{display:flex;gap:.2rem;color:var(--gd)}
-.tc-q{font-size:1rem;line-height:1.75;color:var(--tm);flex:1}
+.tc-q{font-size:.95rem;line-height:1.8;color:var(--tm);flex:1;font-weight:300}
 .tc-auth{display:flex;align-items:center;gap:.9rem}
 .tc-av{width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .tc-name{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:'Prompt',sans-serif;
   font-size:.85rem;font-weight:600;color:var(--fg);
 }
 .tc-detail{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.75rem;color:var(--tl);
+  font-family:'Prompt',sans-serif;
+  font-size:.75rem;color:var(--tl);font-weight:300;
 }
 
 /* CTA */
@@ -361,26 +392,26 @@ nav{
   max-width:900px;margin:0 auto;
 }
 .cta-eye{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;
+  font-family:'Prompt',sans-serif;
+  font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
   color:var(--gd);margin-bottom:1.25rem;
 }
 .cta-h2{
-  font-size:clamp(3rem,5vw,5.5rem);font-weight:400;
-  color:var(--fg);line-height:1.02;margin-bottom:1.5rem;
+  font-size:clamp(2.4rem,5vw,5.5rem);font-weight:600;
+  color:var(--fg);line-height:1.05;margin-bottom:1.5rem;
 }
-.cta-h2 em{font-style:italic;color:var(--ls)}
+.cta-h2 em{color:var(--ls);font-style:normal}
 .cta-sub{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:1.05rem;color:var(--tm);max-width:500px;
-  margin:0 auto 3rem;line-height:1.75;
+  font-family:'Prompt',sans-serif;
+  font-size:1rem;color:var(--tm);max-width:520px;
+  margin:0 auto 3rem;line-height:1.8;font-weight:300;
 }
 .cta-btns{display:flex;align-items:center;justify-content:center;gap:1.25rem;flex-wrap:wrap}
 .btn-xl{
   display:inline-flex;align-items:center;gap:.7rem;
   padding:1.05rem 2.4rem;border-radius:100px;text-decoration:none;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.9rem;letter-spacing:.04em;transition:all .25s;
+  font-family:'Prompt',sans-serif;
+  font-size:.9rem;letter-spacing:.02em;transition:all .25s;
 }
 .btn-xl-fill{background:var(--fg);color:var(--cr)}
 .btn-xl-fill:hover{background:var(--sg);transform:translateY(-2px)}
@@ -392,8 +423,8 @@ nav{
 }
 .trust-item{
   display:flex;align-items:center;gap:.5rem;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.78rem;color:var(--tl);
+  font-family:'Prompt',sans-serif;
+  font-size:.78rem;color:var(--tl);font-weight:300;
 }
 .trust-item i{color:var(--ls)}
 
@@ -405,29 +436,29 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
   padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);
   margin-bottom:2rem;
 }
-.fb-name{font-size:1.6rem;color:var(--cr);font-weight:400;margin-bottom:.25rem}
+.fb-name{font-size:1.6rem;color:var(--cr);font-weight:500;margin-bottom:.25rem}
 .fb-sub{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:'Prompt',sans-serif;
   font-size:.7rem;color:var(--wg);letter-spacing:.12em;margin-bottom:1.1rem;
 }
 .fb-p{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.84rem;line-height:1.7;max-width:270px;
+  font-family:'Prompt',sans-serif;
+  font-size:.84rem;line-height:1.75;max-width:270px;font-weight:300;
 }
 .fc h4{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ps);margin-bottom:1.25rem;
+  font-family:'Prompt',sans-serif;
+  font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ps);margin-bottom:1.25rem;font-weight:600;
 }
 .fc ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
 .fc ul li a{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:.85rem;color:rgba(213,232,208,.55);text-decoration:none;transition:color .2s;
+  font-family:'Prompt',sans-serif;
+  font-size:.85rem;color:rgba(213,232,208,.55);text-decoration:none;transition:color .2s;font-weight:300;
 }
 .fc ul li a:hover{color:var(--ps)}
 .footer-bot{
   display:flex;align-items:center;justify-content:space-between;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.76rem;
+  font-family:'Prompt',sans-serif;font-size:.76rem;font-weight:300;
 }
 .socials{display:flex;gap:.75rem}
 .soc{
@@ -438,7 +469,7 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
 }
 .soc:hover{border-color:var(--wg);color:var(--wg)}
 
-/* RESPONSIVE */
+/* RESPONSIVE — 1100px */
 @media(max-width:1100px){
   .hero{grid-template-columns:1fr}
   .hero-right{height:60vw}
@@ -456,19 +487,54 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
   .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
   nav{padding:.9rem 2rem}
   .nav-links{display:none}
+  .nav-toggle{display:flex}
 }
+
+/* RESPONSIVE — 720px */
 @media(max-width:720px){
   .hero-left{padding:4rem 1.75rem}
+  .hero-h1{font-size:clamp(2rem,8vw,3.5rem)}
   .hero-card{grid-template-columns:1fr 1fr 1fr}
   .hc-div{display:none}
   .pgrid{grid-template-columns:1fr}
   .pc-feat{grid-column:span 1}
   .tgrid{grid-template-columns:1fr}
   .cta-wrap{padding:6rem 1.75rem}
+  .cta-h2{font-size:clamp(2rem,8vw,3.5rem)}
   footer{padding:3rem 1.75rem}
   .footer-top{grid-template-columns:1fr}
   .footer-bot{flex-direction:column;gap:1.25rem;text-align:center}
   .testi-hd{flex-direction:column;gap:1.5rem;align-items:flex-start}
+  .products-hd{flex-direction:column;align-items:flex-start;gap:1rem}
+  .about{padding:5rem 1.75rem}
+  .benefits{padding:5rem 1.75rem}
+  .testi{padding:5rem 1.75rem}
+  .products{padding:5rem 1.75rem}
+}
+
+/* RESPONSIVE — 520px (very small screens) */
+@media(max-width:520px){
+  .hero-left{padding:3rem 1.25rem}
+  .hero-h1{font-size:clamp(1.8rem,9vw,2.8rem);line-height:1.15}
+  .hero-p{font-size:.9rem}
+  .hero-btns{gap:1rem}
+  .hero-card{padding:1rem 1.1rem;gap:.5rem}
+  .hc-num{font-size:1.3rem}
+  .hc-lbl{font-size:.6rem}
+  .about-h2{font-size:clamp(1.8rem,8vw,2.8rem)}
+  .products-h2{font-size:clamp(1.8rem,8vw,2.8rem)}
+  .cta-h2{font-size:clamp(1.8rem,9vw,2.8rem)}
+  .cta-wrap{padding:4.5rem 1.25rem}
+  .benefits-hd h2{font-size:clamp(1.8rem,8vw,2.8rem)}
+  .testi-h2{font-size:clamp(1.6rem,7vw,2.5rem)}
+  .about{padding:4rem 1.25rem}
+  .benefits{padding:4rem 1.25rem}
+  .testi{padding:4rem 1.25rem}
+  .products{padding:4rem 1.25rem}
+  .trust-row{gap:1.25rem}
+  .about-pillars{grid-template-columns:1fr}
+  .tape-item{font-size:.68rem;padding:0 1.25rem}
+  nav{padding:.8rem 1.25rem}
 }
 </style>
 </head>
@@ -486,11 +552,21 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">Philosophy</a></li>
-    <li><a href="#products">Products</a></li>
-    <li><a href="#benefits">Benefits</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#" class="nav-shop">Shop Now</a></li>
+    <li><a href="#about">ปรัชญา</a></li>
+    <li><a href="#products">สินค้า</a></li>
+    <li><a href="#benefits">จุดเด่น</a></li>
+    <li><a href="#reviews">รีวิว</a></li>
+    <li><a href="#" class="nav-shop">สั่งซื้อเลย</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="เปิดเมนู">
+    <i data-lucide="menu" style="width:22px;height:22px;"></i>
+  </button>
+  <ul class="nav-dropdown" id="navDropdown">
+    <li><a href="#about">ปรัชญา</a></li>
+    <li><a href="#products">สินค้า</a></li>
+    <li><a href="#benefits">จุดเด่น</a></li>
+    <li><a href="#reviews">รีวิว</a></li>
+    <li><a href="#" class="nav-shop">สั่งซื้อเลย</a></li>
   </ul>
 </nav>
 
@@ -499,41 +575,41 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
   <div class="hero-left">
     <div class="hero-tag">
       <span class="hero-tag-dot"></span>
-      Health &amp; Wellness — For Adults 40+
+      สุขภาพดี — เพื่อผู้ใหญ่วัย 40+
     </div>
     <h1 class="hero-h1">
-      Rooted<br>in <em>nature,</em><br>made for you
+      หยั่งรากลึก<br>จาก<em>ธรรมชาติ</em><br>เพื่อคุณ
     </h1>
     <p class="hero-p sans">
-      Clean, thoughtfully formulated supplements for those who believe real wellness comes from understanding exactly what you put in your body.
+      ผลิตภัณฑ์เสริมสุขภาพที่สะอาด คัดสรรส่วนผสมอย่างพิถีพิถัน เพื่อผู้ที่เชื่อว่าสุขภาพที่แท้จริงมาจากการรู้ว่าคุณใส่อะไรเข้าสู่ร่างกาย
     </p>
     <div class="hero-btns">
       <a href="#products" class="btn-a btn-solid">
-        Explore Products
+        สำรวจสินค้า
         <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
       </a>
       <a href="#about" class="btn-a btn-ghost">
-        Our story
+        เรื่องราวของเรา
         <i data-lucide="chevron-right" style="width:14px;height:14px;"></i>
       </a>
     </div>
   </div>
   <div class="hero-right">
-    <img src="https://picsum.photos/seed/forest-wellness-light/900/1100" alt="Natural wellness">
+    <img src="https://picsum.photos/seed/forest-wellness-light/900/1100" alt="ผลิตภัณฑ์เสริมสุขภาพจากธรรมชาติ">
     <div class="hero-card">
       <div class="hc-stat">
         <span class="hc-num">12+</span>
-        <div class="hc-lbl sans">Years Research</div>
+        <div class="hc-lbl sans">ปีแห่งการวิจัย</div>
       </div>
       <div class="hc-div"></div>
       <div class="hc-stat">
         <span class="hc-num">50k+</span>
-        <div class="hc-lbl sans">Customers</div>
+        <div class="hc-lbl sans">ลูกค้า</div>
       </div>
       <div class="hc-div"></div>
       <div class="hc-stat">
         <span class="hc-num">100%</span>
-        <div class="hc-lbl sans">Natural</div>
+        <div class="hc-lbl sans">ธรรมชาติ</div>
       </div>
     </div>
   </div>
@@ -542,18 +618,18 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
 <!-- TAPE -->
 <div class="tape">
   <div class="tape-track">
-    <span class="tape-item sans"><span class="tape-sep"></span>Natural Ingredients</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>Doctor Approved</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>GMP Certified</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>No Artificial Additives</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>Clinically Tested</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>Free Shipping Above 1,500 THB</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>Natural Ingredients</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>Doctor Approved</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>GMP Certified</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>No Artificial Additives</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>Clinically Tested</span>
-    <span class="tape-item sans"><span class="tape-sep"></span>Free Shipping Above 1,500 THB</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>ส่วนผสมธรรมชาติ</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>แพทย์แนะนำ</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>รับรองมาตรฐาน GMP</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>ปราศจากสารปรุงแต่ง</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>ผ่านการทดสอบทางคลินิก</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>จัดส่งฟรีเมื่อซื้อครบ 1,500 บาท</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>ส่วนผสมธรรมชาติ</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>แพทย์แนะนำ</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>รับรองมาตรฐาน GMP</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>ปราศจากสารปรุงแต่ง</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>ผ่านการทดสอบทางคลินิก</span>
+    <span class="tape-item sans"><span class="tape-sep"></span>จัดส่งฟรีเมื่อซื้อครบ 1,500 บาท</span>
   </div>
 </div>
 
@@ -562,49 +638,49 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
   <div class="about-left">
     <div class="slabel">
       <span class="slabel-line"></span>
-      Our Philosophy
+      ปรัชญาของเรา
     </div>
-    <h2 class="about-h2">Where simplicity<br>meets <em>wisdom</em></h2>
+    <h2 class="about-h2">เรียบง่าย<br>แต่เปี่ยมด้วย<em>ปัญญา</em></h2>
     <div class="about-img-wrap">
-      <img src="https://picsum.photos/seed/herbal-botanicals/480/640" alt="Botanical ingredients" class="about-img-main">
+      <img src="https://picsum.photos/seed/herbal-botanicals/480/640" alt="ส่วนผสมจากพืชสมุนไพร" class="about-img-main">
       <div class="about-img-badge">
         <span>98%</span>
-        <small class="sans">Satisfaction</small>
+        <small class="sans">ความพึงพอใจ</small>
       </div>
     </div>
   </div>
   <div class="about-right">
     <p class="about-text">
-      Mr. Tree was born from a simple belief: the best health solutions are those you can understand and trust. For adults navigating the complexity of modern wellness, we remove the noise — no jargon, no unnecessary additives, just clean formulations backed by science and drawn from nature.
+      มิสเตอร์ทรีเกิดขึ้นจากความเชื่อเรียบง่าย ว่าผลิตภัณฑ์ดูแลสุขภาพที่ดีที่สุดคือสิ่งที่คุณเข้าใจได้และไว้วางใจได้ สำหรับผู้ใหญ่ที่กำลังรับมือกับความสับสนในโลกของสุขภาพสมัยใหม่ เราขจัดความซับซ้อนออก ไม่มีศัพท์เทคนิค ไม่มีสารเติมแต่งที่ไม่จำเป็น มีเพียงสูตรที่สะอาด รองรับด้วยวิทยาศาสตร์ และสกัดจากธรรมชาติ
     </p>
     <div class="about-pillars">
       <div class="pillar">
         <div class="pillar-icon">
           <i data-lucide="shield-check" style="width:18px;height:18px;"></i>
         </div>
-        <h4>Purity First</h4>
-        <p>Every ingredient selected with care — nothing that should not be there.</p>
+        <h4>ความบริสุทธิ์เป็นหลัก</h4>
+        <p>คัดเลือกทุกส่วนผสมอย่างรอบคอบ ไม่มีสิ่งที่ไม่ควรอยู่ในสูตร</p>
       </div>
       <div class="pillar">
         <div class="pillar-icon">
           <i data-lucide="flask-conical" style="width:18px;height:18px;"></i>
         </div>
-        <h4>Science Backed</h4>
-        <p>Formulas grounded in clinical research and verified by health experts.</p>
+        <h4>มีงานวิจัยรองรับ</h4>
+        <p>สูตรที่อิงจากการวิจัยทางคลินิกและได้รับการยืนยันจากผู้เชี่ยวชาญด้านสุขภาพ</p>
       </div>
       <div class="pillar">
         <div class="pillar-icon">
           <i data-lucide="sprout" style="width:18px;height:18px;"></i>
         </div>
-        <h4>Nature Sourced</h4>
-        <p>Ingredients traceable to their origins, sustainably and ethically selected.</p>
+        <h4>มาจากธรรมชาติ</h4>
+        <p>ส่วนผสมที่ตรวจสอบแหล่งที่มาได้ คัดสรรอย่างยั่งยืนและมีจริยธรรม</p>
       </div>
       <div class="pillar">
         <div class="pillar-icon">
           <i data-lucide="heart" style="width:18px;height:18px;"></i>
         </div>
-        <h4>Made for 40+</h4>
-        <p>Tailored specifically to the wellness needs of mature adults.</p>
+        <h4>เพื่อวัย 40+</h4>
+        <p>ออกแบบมาเฉพาะสำหรับความต้องการด้านสุขภาพของผู้ใหญ่ที่เติบโตเต็มที่</p>
       </div>
     </div>
   </div>
@@ -613,9 +689,9 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
 <!-- PRODUCTS -->
 <section class="products" id="products">
   <div class="products-hd">
-    <h2 class="products-h2">Our <em>signature</em><br>collection</h2>
+    <h2 class="products-h2">คอลเลกชัน<em>ซิกเนเจอร์</em><br>ของเรา</h2>
     <a href="#" class="view-all sans">
-      View all products
+      ดูสินค้าทั้งหมด
       <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
     </a>
   </div>
@@ -623,12 +699,12 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
     <!-- Featured -->
     <div class="pc pc-feat">
       <div class="pc-img">
-        <img src="https://picsum.photos/seed/green-vitality-plant/700/500" alt="Green Vitality Complex">
+        <img src="https://picsum.photos/seed/green-vitality-plant/700/500" alt="กรีน ไวทาลิตี้">
       </div>
       <div class="pc-body">
-        <span class="pc-badge">Best Seller</span>
-        <div class="pc-name">Green Vitality Complex</div>
-        <div class="pc-desc">Our flagship blend of chlorophyll-rich plants, adaptogenic herbs, and essential micronutrients for sustained energy and daily vitality.</div>
+        <span class="pc-badge">ขายดี</span>
+        <div class="pc-name">กรีน ไวทาลิตี้</div>
+        <div class="pc-desc">สูตรเรือธงที่ผสานพลังของพืชที่อุดมด้วยคลอโรฟิลล์ สมุนไพรแอดาโทเจน และสารอาหารจำเป็น เพื่อพลังงานต่อเนื่องและความมีชีวิตชีวาตลอดวัน</div>
         <div class="pc-foot">
           <span class="pc-price">฿1,290</span>
           <button class="pc-add"><i data-lucide="plus" style="width:15px;height:15px;"></i></button>
@@ -638,12 +714,12 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
     <!-- Row 1 -->
     <div class="pc">
       <div class="pc-img">
-        <img src="https://picsum.photos/seed/joint-movement-health/500/240" alt="Joint Ease Formula">
+        <img src="https://picsum.photos/seed/joint-movement-health/500/240" alt="จอยต์ อีส">
       </div>
       <div class="pc-body">
-        <span class="pc-badge">Popular</span>
-        <div class="pc-name">Joint Ease Formula</div>
-        <div class="pc-desc">Collagen, glucosamine and turmeric for flexible, comfortable movement every day.</div>
+        <span class="pc-badge">ยอดนิยม</span>
+        <div class="pc-name">จอยต์ อีส</div>
+        <div class="pc-desc">คอลลาเจน กลูโคซามีน และขมิ้นชัน เพื่อข้อต่อที่ยืดหยุ่นและเคลื่อนไหวสบายทุกวัน</div>
         <div class="pc-foot">
           <span class="pc-price">฿990</span>
           <button class="pc-add"><i data-lucide="plus" style="width:15px;height:15px;"></i></button>
@@ -652,11 +728,11 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
     </div>
     <div class="pc">
       <div class="pc-img">
-        <img src="https://picsum.photos/seed/calm-sleep-night/500/240" alt="Calm & Sleep Blend">
+        <img src="https://picsum.photos/seed/calm-sleep-night/500/240" alt="คาล์ม & สลีป">
       </div>
       <div class="pc-body">
-        <div class="pc-name">Calm &amp; Sleep Blend</div>
-        <div class="pc-desc">Ashwagandha, valerian root and magnesium for deep, restorative sleep.</div>
+        <div class="pc-name">คาล์ม &amp; สลีป</div>
+        <div class="pc-desc">อาชวากันธา รากวาเลอเรียน และแมกนีเซียม เพื่อการนอนหลับลึกและฟื้นฟูร่างกาย</div>
         <div class="pc-foot">
           <span class="pc-price">฿890</span>
           <button class="pc-add"><i data-lucide="plus" style="width:15px;height:15px;"></i></button>
@@ -666,11 +742,11 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
     <!-- Row 2 -->
     <div class="pc">
       <div class="pc-img">
-        <img src="https://picsum.photos/seed/heart-circulation-warm/500/240" alt="Heart & Circulation">
+        <img src="https://picsum.photos/seed/heart-circulation-warm/500/240" alt="หัวใจ & การไหลเวียน">
       </div>
       <div class="pc-body">
-        <div class="pc-name">Heart &amp; Circulation</div>
-        <div class="pc-desc">CoQ10, omega-3 and hawthorn berry for cardiovascular support and vitality.</div>
+        <div class="pc-name">หัวใจ &amp; การไหลเวียน</div>
+        <div class="pc-desc">CoQ10 โอเมก้า-3 และฮอว์ธอร์นเบอร์รี่ เพื่อสนับสนุนระบบหัวใจและหลอดเลือดอย่างมีประสิทธิภาพ</div>
         <div class="pc-foot">
           <span class="pc-price">฿1,090</span>
           <button class="pc-add"><i data-lucide="plus" style="width:15px;height:15px;"></i></button>
@@ -679,12 +755,12 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
     </div>
     <div class="pc">
       <div class="pc-img">
-        <img src="https://picsum.photos/seed/immunity-elderberry/500/240" alt="Immunity Shield">
+        <img src="https://picsum.photos/seed/immunity-elderberry/500/240" alt="อิมมูนิตี้ ชิลด์">
       </div>
       <div class="pc-body">
-        <span class="pc-badge">New</span>
-        <div class="pc-name">Immunity Shield</div>
-        <div class="pc-desc">Beta-glucans, elderberry and vitamin D3+K2 immune defence complex.</div>
+        <span class="pc-badge">ใหม่</span>
+        <div class="pc-name">อิมมูนิตี้ ชิลด์</div>
+        <div class="pc-desc">เบต้ากลูแคน เอลเดอร์เบอร์รี่ และวิตามิน D3+K2 สูตรเสริมภูมิคุ้มกันแบบครบวงจร</div>
         <div class="pc-foot">
           <span class="pc-price">฿790</span>
           <button class="pc-add"><i data-lucide="plus" style="width:15px;height:15px;"></i></button>
@@ -699,48 +775,48 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
   <div class="benefits-hd">
     <div class="slabel" style="justify-content:center">
       <span class="slabel-line"></span>
-      Why Mr. Tree
+      ทำไมต้องมิสเตอร์ทรี
       <span class="slabel-line"></span>
     </div>
-    <h2>Designed for how<br>you live <em>today</em></h2>
-    <p>Every product reflects a deep understanding of the health needs and values of adults over 40.</p>
+    <h2>ออกแบบมาเพื่อ<br>การใช้ชีวิต<em>ของคุณ</em></h2>
+    <p>ทุกผลิตภัณฑ์สะท้อนความเข้าใจอย่างลึกซึ้งในความต้องการด้านสุขภาพและค่านิยมของผู้ใหญ่วัยเกิน 40 ปี</p>
   </div>
   <div class="benefits-body">
     <div class="img-stack">
-      <img src="https://picsum.photos/seed/mature-wellness-woman/640/640" alt="Healthy living" class="img-main">
-      <img src="https://picsum.photos/seed/botanical-extract/320/320" alt="Natural extract" class="img-accent">
+      <img src="https://picsum.photos/seed/mature-wellness-woman/640/640" alt="การใช้ชีวิตที่มีสุขภาพดี" class="img-main">
+      <img src="https://picsum.photos/seed/botanical-extract/320/320" alt="สารสกัดจากธรรมชาติ" class="img-accent">
       <div class="img-chip">
         <span>98%</span>
-        <small>Customer Satisfaction</small>
+        <small>ความพึงพอใจของลูกค้า</small>
       </div>
     </div>
     <div class="blist">
       <div class="bitem">
         <span class="bnum">01</span>
         <div>
-          <div class="btitle">Clean labels you can read</div>
-          <div class="bdesc sans">No hidden ingredients, no complex chemical names. Every component is clearly listed and explained in plain language.</div>
+          <div class="btitle">ฉลากที่อ่านเข้าใจได้</div>
+          <div class="bdesc sans">ไม่มีส่วนผสมที่ซ่อนอยู่ ไม่มีชื่อเคมีซับซ้อน ทุกส่วนประกอบแสดงไว้อย่างชัดเจนและอธิบายด้วยภาษาที่เข้าใจง่าย</div>
         </div>
       </div>
       <div class="bitem">
         <span class="bnum">02</span>
         <div>
-          <div class="btitle">Formulated for mature metabolism</div>
-          <div class="bdesc sans">As bodies change with age, nutritional needs evolve. Our formulas account for how absorption and utilisation shift after 40.</div>
+          <div class="btitle">ออกแบบตามระบบเมตาบอลิซึมของวัยผู้ใหญ่</div>
+          <div class="bdesc sans">เมื่อร่างกายเปลี่ยนแปลงตามอายุ ความต้องการโภชนาการก็เปลี่ยนด้วย สูตรของเรารองรับการดูดซึมและการนำไปใช้ที่เปลี่ยนไปหลังวัย 40</div>
         </div>
       </div>
       <div class="bitem">
         <span class="bnum">03</span>
         <div>
-          <div class="btitle">Consistent, gentle results</div>
-          <div class="bdesc sans">Wellness is not dramatic — it is steady improvement felt over time. Our products work gently and consistently, every day.</div>
+          <div class="btitle">ผลลัพธ์ที่สม่ำเสมอและอ่อนโยน</div>
+          <div class="bdesc sans">สุขภาพที่ดีไม่ใช่การเปลี่ยนแปลงที่รวดเร็ว แต่คือการพัฒนาอย่างต่อเนื่องที่รู้สึกได้ตามเวลา ผลิตภัณฑ์ของเราทำงานอย่างอ่อนโยนและสม่ำเสมอทุกวัน</div>
         </div>
       </div>
       <div class="bitem">
         <span class="bnum">04</span>
         <div>
-          <div class="btitle">Trusted by healthcare professionals</div>
-          <div class="bdesc sans">Recommended by physicians and pharmacists across Thailand who value natural, evidence-based supplementation for their patients.</div>
+          <div class="btitle">ได้รับความไว้วางใจจากบุคลากรทางการแพทย์</div>
+          <div class="bdesc sans">แนะนำโดยแพทย์และเภสัชกรทั่วประเทศไทยที่ให้ความสำคัญกับการเสริมสุขภาพจากธรรมชาติที่มีหลักฐานรองรับ</div>
         </div>
       </div>
     </div>
@@ -754,9 +830,9 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
       <div>
         <div class="slabel">
           <span class="slabel-line"></span>
-          Customer Reviews
+          รีวิวจากลูกค้า
         </div>
-        <h2 class="testi-h2">Words from those<br>who <em>trust</em> us</h2>
+        <h2 class="testi-h2">คำพูดจากผู้ที่<br><em>ไว้วางใจ</em>เรา</h2>
       </div>
       <div class="rtg-wrap">
         <span class="rtg-num">4.9</span>
@@ -767,7 +843,7 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
           <i data-lucide="star" style="width:18px;height:18px;fill:currentColor;"></i>
           <i data-lucide="star" style="width:18px;height:18px;fill:currentColor;"></i>
         </div>
-        <div class="rtg-note sans">Based on 3,200+ verified reviews</div>
+        <div class="rtg-note sans">จากรีวิวที่ยืนยันแล้วกว่า 3,200 รายการ</div>
       </div>
     </div>
     <div class="tgrid">
@@ -779,12 +855,12 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
           <i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i>
           <i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i>
         </div>
-        <p class="tc-q">"After six months with the Green Vitality Complex, the difference in my energy is remarkable. I feel like I did in my thirties — without the jitteriness you get from other supplements."</p>
+        <p class="tc-q">"หลังจากใช้กรีน ไวทาลิตี้ครบหกเดือน ความแตกต่างด้านพลังงานชัดเจนมาก รู้สึกเหมือนอายุสามสิบอีกครั้ง โดยไม่มีอาการใจสั่นแบบที่เคยเกิดกับผลิตภัณฑ์อื่น"</p>
         <div class="tc-auth">
-          <img src="https://picsum.photos/seed/thai-woman-54/96/96" alt="Khun Malee" class="tc-av">
+          <img src="https://picsum.photos/seed/thai-woman-54/96/96" alt="คุณมาลี" class="tc-av">
           <div>
-            <div class="tc-name">Khun Malee S.</div>
-            <div class="tc-detail sans">Age 54 — Bangkok</div>
+            <div class="tc-name">คุณมาลี ส.</div>
+            <div class="tc-detail sans">อายุ 54 ปี — กรุงเทพฯ</div>
           </div>
         </div>
       </div>
@@ -796,12 +872,12 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
           <i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i>
           <i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i>
         </div>
-        <p class="tc-q">"What sets Mr. Tree apart is transparency. I know exactly what I am taking and why. My doctor also appreciated how clean the formulations are — no unnecessary compounds whatsoever."</p>
+        <p class="tc-q">"สิ่งที่ทำให้มิสเตอร์ทรีแตกต่างคือความโปร่งใส ผมรู้ชัดว่ากินอะไรและทำไม แพทย์ของผมก็ชื่นชมความสะอาดของสูตร ไม่มีสารประกอบที่ไม่จำเป็นเลยแม้แต่น้อย"</p>
         <div class="tc-auth">
-          <img src="https://picsum.photos/seed/thai-man-62/96/96" alt="Khun Pradit" class="tc-av">
+          <img src="https://picsum.photos/seed/thai-man-62/96/96" alt="คุณประดิษฐ์" class="tc-av">
           <div>
-            <div class="tc-name">Khun Pradit W.</div>
-            <div class="tc-detail sans">Age 62 — Chiang Mai</div>
+            <div class="tc-name">คุณประดิษฐ์ ว.</div>
+            <div class="tc-detail sans">อายุ 62 ปี — เชียงใหม่</div>
           </div>
         </div>
       </div>
@@ -813,12 +889,12 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
           <i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i>
           <i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i>
         </div>
-        <p class="tc-q">"The Joint Ease Formula genuinely helped my morning stiffness. Three months in, I am back to daily walks without discomfort. Simple product, real results — exactly what Mr. Tree promises."</p>
+        <p class="tc-q">"จอยต์ อีสช่วยแก้ปัญหาข้อติดยามเช้าได้จริง สามเดือนผ่านไปกลับมาเดินออกกำลังกายทุกวันได้โดยไม่รู้สึกเจ็บปวด ผลิตภัณฑ์เรียบง่าย ผลลัพธ์จริง ตรงกับที่มิสเตอร์ทรีสัญญาไว้"</p>
         <div class="tc-auth">
-          <img src="https://picsum.photos/seed/senior-active-woman/96/96" alt="Khun Ratree" class="tc-av">
+          <img src="https://picsum.photos/seed/senior-active-woman/96/96" alt="คุณรัตรี" class="tc-av">
           <div>
-            <div class="tc-name">Khun Ratree P.</div>
-            <div class="tc-detail sans">Age 58 — Phuket</div>
+            <div class="tc-name">คุณรัตรี พ.</div>
+            <div class="tc-detail sans">อายุ 58 ปี — ภูเก็ต</div>
           </div>
         </div>
       </div>
@@ -828,31 +904,31 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
 
 <!-- CTA -->
 <div class="cta-wrap">
-  <div class="cta-eye sans">Begin your wellness journey</div>
-  <h2 class="cta-h2">Ready to feel<br><em>your best?</em></h2>
-  <p class="cta-sub sans">Join over 50,000 adults across Thailand who have made Mr. Tree part of their daily wellness ritual. Simple, clean, and genuinely effective.</p>
+  <div class="cta-eye sans">เริ่มต้นเส้นทางสุขภาพของคุณ</div>
+  <h2 class="cta-h2">พร้อมที่จะรู้สึก<br><em>ดีที่สุด</em>แล้วหรือยัง?</h2>
+  <p class="cta-sub sans">ร่วมเป็นส่วนหนึ่งกับผู้ใหญ่กว่า 50,000 คนทั่วประเทศไทย ที่ทำให้มิสเตอร์ทรีเป็นส่วนหนึ่งของกิจวัตรดูแลสุขภาพประจำวัน เรียบง่าย สะอาด และได้ผลจริง</p>
   <div class="cta-btns">
     <a href="#" class="btn-xl btn-xl-fill">
-      Shop All Products
+      ดูสินค้าทั้งหมด
       <i data-lucide="arrow-right" style="width:17px;height:17px;"></i>
     </a>
     <a href="#" class="btn-xl btn-xl-out">
-      Find Your Formula
+      ค้นหาสูตรของคุณ
       <i data-lucide="sparkles" style="width:17px;height:17px;"></i>
     </a>
   </div>
   <div class="trust-row">
     <div class="trust-item">
       <i data-lucide="shield-check" style="width:15px;height:15px;"></i>
-      <span class="sans">GMP Certified</span>
+      <span class="sans">รับรองมาตรฐาน GMP</span>
     </div>
     <div class="trust-item">
       <i data-lucide="truck" style="width:15px;height:15px;"></i>
-      <span class="sans">Free shipping above 1,500 THB</span>
+      <span class="sans">จัดส่งฟรีเมื่อซื้อครบ 1,500 บาท</span>
     </div>
     <div class="trust-item">
       <i data-lucide="rotate-ccw" style="width:15px;height:15px;"></i>
-      <span class="sans">30-day money-back guarantee</span>
+      <span class="sans">รับประกันคืนเงิน 30 วัน</span>
     </div>
   </div>
 </div>
@@ -864,41 +940,41 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
       <div>
         <div class="fb-name">Mr. Tree</div>
         <div class="fb-sub sans">มิสเตอร์ทรี</div>
-        <p class="fb-p">Natural health and wellness supplements crafted for adults who value simplicity, clarity, and genuine results they can feel.</p>
+        <p class="fb-p">ผลิตภัณฑ์เสริมสุขภาพจากธรรมชาติ คัดสรรมาสำหรับผู้ใหญ่ที่ให้ความสำคัญกับความเรียบง่าย ความชัดเจน และผลลัพธ์ที่รู้สึกได้จริง</p>
       </div>
       <div class="fc">
-        <h4>Products</h4>
+        <h4>สินค้า</h4>
         <ul>
-          <li><a href="#">Green Vitality Complex</a></li>
-          <li><a href="#">Joint Ease Formula</a></li>
-          <li><a href="#">Calm &amp; Sleep Blend</a></li>
-          <li><a href="#">Heart &amp; Circulation</a></li>
-          <li><a href="#">Immunity Shield</a></li>
+          <li><a href="#">กรีน ไวทาลิตี้</a></li>
+          <li><a href="#">จอยต์ อีส</a></li>
+          <li><a href="#">คาล์ม &amp; สลีป</a></li>
+          <li><a href="#">หัวใจ &amp; การไหลเวียน</a></li>
+          <li><a href="#">อิมมูนิตี้ ชิลด์</a></li>
         </ul>
       </div>
       <div class="fc">
-        <h4>Company</h4>
+        <h4>บริษัท</h4>
         <ul>
-          <li><a href="#">Our Story</a></li>
-          <li><a href="#">Ingredients</a></li>
-          <li><a href="#">Certifications</a></li>
-          <li><a href="#">Research</a></li>
-          <li><a href="#">Press</a></li>
+          <li><a href="#">เรื่องราวของเรา</a></li>
+          <li><a href="#">ส่วนผสม</a></li>
+          <li><a href="#">การรับรองมาตรฐาน</a></li>
+          <li><a href="#">งานวิจัย</a></li>
+          <li><a href="#">สื่อมวลชน</a></li>
         </ul>
       </div>
       <div class="fc">
-        <h4>Support</h4>
+        <h4>บริการลูกค้า</h4>
         <ul>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Shipping Policy</a></li>
-          <li><a href="#">Returns</a></li>
+          <li><a href="#">ติดต่อเรา</a></li>
+          <li><a href="#">คำถามที่พบบ่อย</a></li>
+          <li><a href="#">นโยบายการจัดส่ง</a></li>
+          <li><a href="#">การคืนสินค้า</a></li>
           <li><a href="#">Line Official</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bot">
-      <span>&copy; 2024 Mr. Tree Co., Ltd. All rights reserved.</span>
+      <span>&copy; 2026 บริษัท มิสเตอร์ทรี จำกัด สงวนลิขสิทธิ์</span>
       <div class="socials">
         <a href="#" class="soc"><i data-lucide="facebook" style="width:15px;height:15px;"></i></a>
         <a href="#" class="soc"><i data-lucide="instagram" style="width:15px;height:15px;"></i></a>
@@ -915,6 +991,30 @@ footer{background:#111F17;color:rgba(213,232,208,.65);padding:4.5rem 5rem}
   window.addEventListener('scroll', () => {
     document.querySelector('nav').style.boxShadow =
       window.scrollY > 20 ? '0 2px 20px rgba(28,53,40,.08)' : 'none';
+  });
+
+  // Hamburger menu toggle
+  const navToggle = document.getElementById('navToggle');
+  const navDropdown = document.getElementById('navDropdown');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navDropdown.classList.toggle('open');
+    navToggle.setAttribute('aria-label', isOpen ? 'ปิดเมนู' : 'เปิดเมนู');
+    // Re-render icon
+    navToggle.innerHTML = isOpen
+      ? '<i data-lucide="x" style="width:22px;height:22px;"></i>'
+      : '<i data-lucide="menu" style="width:22px;height:22px;"></i>';
+    lucide.createIcons();
+  });
+
+  // Close dropdown when any link inside is clicked
+  navDropdown.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navDropdown.classList.remove('open');
+      navToggle.setAttribute('aria-label', 'เปิดเมนู');
+      navToggle.innerHTML = '<i data-lucide="menu" style="width:22px;height:22px;"></i>';
+      lucide.createIcons();
+    });
   });
 </script>
 </body>

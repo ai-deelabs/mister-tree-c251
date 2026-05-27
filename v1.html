@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mr. Tree | มิสเตอร์ทรี — Natural Wellness</title>
+  <title>Mr. Tree | มิสเตอร์ทรี — สุขภาพดีจากธรรมชาติ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,7 +26,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      font-family: 'Sarabun', sans-serif;
       background: var(--cream);
       color: var(--text);
       line-height: 1.6;
@@ -52,9 +55,9 @@
       text-decoration: none;
     }
     .nav-logo-en {
-      font-family: Georgia, 'Times New Roman', serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: 21px;
-      font-weight: 400;
+      font-weight: 700;
       color: var(--forest);
       letter-spacing: 0.04em;
     }
@@ -73,7 +76,7 @@
     .nav-links a {
       text-decoration: none;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
       letter-spacing: 0.03em;
       transition: color 0.2s;
     }
@@ -84,11 +87,23 @@
       color: var(--white) !important;
       padding: 10px 26px;
       border-radius: 2px;
-      font-size: 13px !important;
-      letter-spacing: 0.09em !important;
-      text-transform: uppercase;
+      font-size: 14px !important;
+      letter-spacing: 0.05em !important;
     }
     .nav-cta:hover { background: var(--sage) !important; }
+
+    /* Hamburger toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--forest);
+      padding: 4px;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-toggle i { width: 24px; height: 24px; }
 
     /* ── Hero ── */
     .hero {
@@ -125,16 +140,17 @@
     }
 
     .hero-title {
-      font-family: Georgia, 'Times New Roman', serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: clamp(38px, 4.2vw, 68px);
-      font-weight: 400;
-      line-height: 1.12;
+      font-weight: 700;
+      line-height: 1.18;
       color: var(--forest);
       margin-bottom: 28px;
     }
     .hero-title em {
-      font-style: italic;
+      font-style: normal;
       color: var(--sage);
+      font-weight: 600;
     }
 
     .hero-desc {
@@ -149,6 +165,7 @@
       display: flex;
       gap: 20px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .btn-primary {
@@ -157,9 +174,9 @@
       padding: 16px 42px;
       border: none;
       border-radius: 2px;
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.05em;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
@@ -169,7 +186,7 @@
 
     .btn-text {
       color: var(--forest);
-      font-size: 14px;
+      font-size: 15px;
       letter-spacing: 0.03em;
       text-decoration: none;
       display: flex;
@@ -199,15 +216,15 @@
       box-shadow: 0 16px 48px rgba(0,0,0,0.1);
     }
     .hero-badge-num {
-      font-family: Georgia, serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: 38px;
+      font-weight: 700;
       color: var(--forest);
       line-height: 1;
     }
     .hero-badge-label {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.1em;
       color: var(--muted);
       margin-top: 6px;
     }
@@ -227,9 +244,8 @@
       align-items: center;
       gap: 10px;
       color: rgba(255,255,255,0.65);
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.05em;
       white-space: nowrap;
       padding: 0 40px;
       border-right: 1px solid rgba(255,255,255,0.1);
@@ -248,11 +264,11 @@
       margin-bottom: 56px;
     }
     .section-title {
-      font-family: Georgia, serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: clamp(26px, 2.8vw, 42px);
-      font-weight: 400;
+      font-weight: 700;
       color: var(--forest);
-      line-height: 1.2;
+      line-height: 1.25;
     }
     .section-eyebrow {
       font-size: 11px;
@@ -264,14 +280,15 @@
     .link-arrow {
       color: var(--sage);
       text-decoration: none;
-      font-size: 14px;
-      letter-spacing: 0.04em;
+      font-size: 15px;
+      letter-spacing: 0.03em;
       display: flex;
       align-items: center;
       gap: 8px;
       padding-bottom: 2px;
       border-bottom: 1px solid var(--sage-light);
       transition: gap 0.2s, border-color 0.2s;
+      white-space: nowrap;
     }
     .link-arrow:hover { gap: 13px; border-color: var(--sage); }
     .link-arrow i { width: 15px; height: 15px; }
@@ -307,9 +324,8 @@
       top: 18px; left: 18px;
       background: var(--gold);
       color: var(--white);
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.08em;
       padding: 4px 12px;
     }
 
@@ -318,15 +334,16 @@
       border-top: 2px solid var(--forest);
     }
     .prod-cat {
-      font-size: 10px;
-      letter-spacing: 0.16em;
+      font-size: 11px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--sage);
       margin-bottom: 6px;
     }
     .prod-name {
-      font-family: Georgia, serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: 20px;
+      font-weight: 600;
       color: var(--forest);
       margin-bottom: 8px;
     }
@@ -342,12 +359,13 @@
       align-items: center;
     }
     .prod-price {
-      font-family: Georgia, serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: 22px;
+      font-weight: 600;
       color: var(--forest);
     }
     .prod-price small {
-      font-family: -apple-system, sans-serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: 13px;
       color: var(--muted);
       font-weight: 400;
@@ -398,11 +416,11 @@
       margin-bottom: 24px;
     }
     .philosophy-title {
-      font-family: Georgia, serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: clamp(26px, 2.6vw, 40px);
-      font-weight: 400;
+      font-weight: 700;
       color: var(--white);
-      line-height: 1.22;
+      line-height: 1.28;
       margin-bottom: 24px;
     }
     .philosophy-text {
@@ -421,10 +439,10 @@
     .value-icon { color: var(--gold); margin-bottom: 2px; }
     .value-icon i { width: 20px; height: 20px; }
     .value-title {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--white);
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
     }
     .value-desc {
       font-size: 13px;
@@ -435,9 +453,9 @@
       border: 1px solid rgba(255,255,255,0.35);
       color: var(--white);
       padding: 14px 38px;
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.04em;
       text-decoration: none;
       display: inline-block;
       align-self: flex-start;
@@ -480,8 +498,9 @@
     }
     .benefit-icon i { width: 22px; height: 22px; }
     .benefit-title {
-      font-family: Georgia, serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: 18px;
+      font-weight: 600;
       color: var(--forest);
       margin-bottom: 10px;
     }
@@ -518,9 +537,9 @@
     }
     .t-rating i { width: 15px; height: 15px; fill: currentColor; }
     .t-text {
-      font-family: Georgia, serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: 15px;
-      font-style: italic;
+      font-style: normal;
       line-height: 1.85;
       color: var(--text);
       margin-bottom: 28px;
@@ -577,11 +596,11 @@
       z-index: 1;
     }
     .cta-title {
-      font-family: Georgia, serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: clamp(26px, 3vw, 46px);
-      font-weight: 400;
+      font-weight: 700;
       color: var(--forest);
-      line-height: 1.2;
+      line-height: 1.25;
       margin-bottom: 18px;
       position: relative;
       z-index: 1;
@@ -601,12 +620,13 @@
       gap: 20px;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
       position: relative;
       z-index: 1;
     }
     .btn-advisor {
       color: var(--forest);
-      font-size: 14px;
+      font-size: 15px;
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -632,8 +652,9 @@
       margin-bottom: 32px;
     }
     .footer-brand-name {
-      font-family: Georgia, serif;
+      font-family: 'Sarabun', sans-serif;
       font-size: 22px;
+      font-weight: 700;
       color: var(--white);
       margin-bottom: 2px;
     }
@@ -667,11 +688,12 @@
     .footer-social i { width: 15px; height: 15px; }
 
     .footer-col-title {
-      font-size: 10px;
-      letter-spacing: 0.18em;
+      font-size: 11px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--white);
       margin-bottom: 18px;
+      font-weight: 600;
     }
     .footer-links {
       list-style: none;
@@ -704,6 +726,200 @@
       transition: color 0.2s;
     }
     .footer-legal a:hover { color: var(--white); }
+
+    /* ── Responsive ── */
+
+    /* 1024px */
+    @media (max-width: 1024px) {
+      .section-products,
+      .section-benefits,
+      .section-testimonials,
+      .section-cta {
+        padding-left: 64px;
+        padding-right: 64px;
+      }
+      footer {
+        padding-left: 64px;
+        padding-right: 64px;
+      }
+      .philosophy-body {
+        padding: 72px 56px;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* 900px */
+    @media (max-width: 900px) {
+      /* Hamburger */
+      .nav-toggle {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(249, 246, 240, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 0 20px;
+        border-bottom: 1px solid rgba(44, 74, 56, 0.1);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        z-index: 199;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links li {
+        width: 100%;
+      }
+      .nav-links a {
+        display: block;
+        padding: 12px 24px;
+        font-size: 16px;
+      }
+      .nav-links .nav-cta {
+        margin: 8px 24px 0;
+        display: block;
+        text-align: center;
+        border-radius: 2px;
+      }
+      nav {
+        padding: 0 20px;
+      }
+
+      /* Hero */
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-panel {
+        order: -1;
+        height: 380px;
+      }
+      .hero-content {
+        padding: 48px 24px 56px;
+      }
+      .hero-badge {
+        bottom: 24px;
+        left: 16px;
+      }
+
+      /* Philosophy */
+      .section-philosophy {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .philosophy-img {
+        height: 320px;
+      }
+      .philosophy-body {
+        padding: 56px 32px;
+      }
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      /* Testimonials 1 col */
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+        margin: 0 auto;
+      }
+
+      /* Footer */
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* 640px */
+    @media (max-width: 640px) {
+      .section-products,
+      .section-benefits,
+      .section-testimonials,
+      .section-cta {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 72px;
+        padding-bottom: 72px;
+      }
+      footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      /* Section head stack */
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      /* Products 1 col */
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Benefits 2 col maintained until 560 */
+      .testimonials-grid {
+        max-width: 100%;
+      }
+    }
+
+    /* 560px */
+    @media (max-width: 560px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 520px */
+    @media (max-width: 520px) {
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+      .footer-legal {
+        justify-content: center;
+      }
+    }
+
+    /* 480px */
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .cta-actions {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .hero-content {
+        padding: 40px 20px 48px;
+      }
+      .hero-panel {
+        height: 300px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -714,40 +930,43 @@
       <span class="nav-logo-en">Mr. Tree</span>
       <span class="nav-logo-th">มิสเตอร์ทรี</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#products">Products</a></li>
-      <li><a href="#philosophy">About</a></li>
-      <li><a href="#benefits">Wellness</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#products" class="nav-cta">Shop Now</a></li>
+    <button class="nav-toggle" id="nav-toggle" aria-label="เปิดเมนู">
+      <i data-lucide="menu"></i>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#products">สินค้า</a></li>
+      <li><a href="#philosophy">เรื่องราวของเรา</a></li>
+      <li><a href="#benefits">สุขภาพดี</a></li>
+      <li><a href="#contact">ติดต่อ</a></li>
+      <li><a href="#products" class="nav-cta">สั่งซื้อเลย</a></li>
     </ul>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <div class="eyebrow">Natural Wellness Since 2019</div>
+      <div class="eyebrow">ดูแลสุขภาพตามธรรมชาติ ตั้งแต่ปี 2562</div>
       <h1 class="hero-title">
-        Nourish Your<br>Body with<br><em>Nature's Best</em>
+        บำรุงร่างกาย<br>ด้วยสิ่งที่ดีที่สุด<br><em>จากธรรมชาติ</em>
       </h1>
       <p class="hero-desc">
-        Thoughtfully crafted health supplements designed for those who believe the best years are still ahead. Clean ingredients, clear benefits, no compromise.
+        ผลิตภัณฑ์เสริมสุขภาพที่คัดสรรมาเพื่อผู้ที่เชื่อว่าวันที่ดีที่สุดยังรออยู่ข้างหน้า ส่วนผสมสะอาด ประโยชน์ชัดเจน ไม่มีสิ่งเจือปน
       </p>
       <div class="hero-actions">
-        <a href="#products" class="btn-primary">Explore Products</a>
+        <a href="#products" class="btn-primary">ดูสินค้าทั้งหมด</a>
         <a href="#philosophy" class="btn-text">
-          Our Story <i data-lucide="arrow-right"></i>
+          เรื่องราวของเรา <i data-lucide="arrow-right"></i>
         </a>
       </div>
     </div>
     <div class="hero-panel">
       <img
         src="https://picsum.photos/seed/botanicals-morning/900/1000"
-        alt="Natural wellness ingredients"
+        alt="ส่วนผสมจากธรรมชาติเพื่อสุขภาพดี"
       />
       <div class="hero-badge">
         <div class="hero-badge-num">12,000+</div>
-        <div class="hero-badge-label">Satisfied Customers</div>
+        <div class="hero-badge-label">ลูกค้าที่ไว้วางใจ</div>
       </div>
     </div>
   </section>
@@ -756,19 +975,19 @@
   <div class="trust-strip">
     <div class="trust-inner">
       <div class="trust-item">
-        <i data-lucide="leaf"></i> All Natural Ingredients
+        <i data-lucide="leaf"></i> ส่วนผสมจากธรรมชาติ 100%
       </div>
       <div class="trust-item">
-        <i data-lucide="shield-check"></i> GMP Certified
+        <i data-lucide="shield-check"></i> ได้รับรองมาตรฐาน GMP
       </div>
       <div class="trust-item">
-        <i data-lucide="flask-conical"></i> Lab Tested
+        <i data-lucide="flask-conical"></i> ผ่านการตรวจในห้องปฏิบัติการ
       </div>
       <div class="trust-item">
-        <i data-lucide="truck"></i> Free Shipping Over ฿800
+        <i data-lucide="truck"></i> จัดส่งฟรีเมื่อซื้อครบ ฿800
       </div>
       <div class="trust-item">
-        <i data-lucide="rotate-ccw"></i> 30-Day Returns
+        <i data-lucide="rotate-ccw"></i> คืนสินค้าได้ใน 30 วัน
       </div>
     </div>
   </div>
@@ -777,26 +996,26 @@
   <section class="section-products" id="products">
     <div class="section-head">
       <div>
-        <div class="section-eyebrow">Curated for You</div>
-        <h2 class="section-title">Featured<br>Wellness Products</h2>
+        <div class="section-eyebrow">คัดสรรเพื่อคุณ</div>
+        <h2 class="section-title">สินค้าเพื่อสุขภาพ<br>ที่แนะนำสำหรับคุณ</h2>
       </div>
-      <a href="#" class="link-arrow">View All Products <i data-lucide="arrow-right"></i></a>
+      <a href="#" class="link-arrow">ดูสินค้าทั้งหมด <i data-lucide="arrow-right"></i></a>
     </div>
 
     <div class="products-grid">
       <!-- Product 1 -->
       <div class="product-card">
         <div class="prod-img">
-          <img src="https://picsum.photos/seed/green-supplement/600/400" alt="Green Balance" />
-          <div class="prod-badge">Bestseller</div>
+          <img src="https://picsum.photos/seed/green-supplement/600/400" alt="กรีน บาลานซ์" />
+          <div class="prod-badge">ขายดี</div>
         </div>
         <div class="prod-body">
-          <div class="prod-cat">Daily Supplement</div>
-          <h3 class="prod-name">Green Balance</h3>
-          <p class="prod-desc">A complete daily greens formula with 22 plant-based ingredients to support energy, digestion, and vitality.</p>
+          <div class="prod-cat">อาหารเสริมประจำวัน</div>
+          <h3 class="prod-name">กรีน บาลานซ์</h3>
+          <p class="prod-desc">สูตรกรีนส์ครบถ้วนจากพืช 22 ชนิด ช่วยเสริมพลังงาน ระบบย่อยอาหาร และความมีชีวิตชีวา</p>
           <div class="prod-foot">
-            <div class="prod-price">฿890 <small>/ 30 servings</small></div>
-            <button class="prod-btn" aria-label="Add to cart"><i data-lucide="plus"></i></button>
+            <div class="prod-price">฿890 <small>/ 30 เสิร์ฟ</small></div>
+            <button class="prod-btn" aria-label="ใส่ตะกร้า"><i data-lucide="plus"></i></button>
           </div>
         </div>
       </div>
@@ -804,15 +1023,15 @@
       <!-- Product 2 -->
       <div class="product-card">
         <div class="prod-img">
-          <img src="https://picsum.photos/seed/collagen-skin/600/400" alt="Radiance Collagen" />
+          <img src="https://picsum.photos/seed/collagen-skin/600/400" alt="เรเดียนซ์ คอลลาเจน" />
         </div>
         <div class="prod-body">
-          <div class="prod-cat">Skin &amp; Joints</div>
-          <h3 class="prod-name">Radiance Collagen</h3>
-          <p class="prod-desc">Marine-sourced collagen peptides with vitamin C for visible skin support and comfortable joint flexibility.</p>
+          <div class="prod-cat">ผิวพรรณ &amp; ข้อต่อ</div>
+          <h3 class="prod-name">เรเดียนซ์ คอลลาเจน</h3>
+          <p class="prod-desc">คอลลาเจนเปปไทด์จากทะเลผสมวิตามินซี ช่วยดูแลผิวพรรณและเพิ่มความยืดหยุ่นให้ข้อต่อ</p>
           <div class="prod-foot">
-            <div class="prod-price">฿1,290 <small>/ 30 sachets</small></div>
-            <button class="prod-btn" aria-label="Add to cart"><i data-lucide="plus"></i></button>
+            <div class="prod-price">฿1,290 <small>/ 30 ซอง</small></div>
+            <button class="prod-btn" aria-label="ใส่ตะกร้า"><i data-lucide="plus"></i></button>
           </div>
         </div>
       </div>
@@ -820,16 +1039,16 @@
       <!-- Product 3 -->
       <div class="product-card">
         <div class="prod-img">
-          <img src="https://picsum.photos/seed/elderberry-immunity/600/400" alt="Immunity Shield" />
-          <div class="prod-badge">New</div>
+          <img src="https://picsum.photos/seed/elderberry-immunity/600/400" alt="อิมมูนิตี้ ชิลด์" />
+          <div class="prod-badge">ใหม่</div>
         </div>
         <div class="prod-body">
-          <div class="prod-cat">Immune Support</div>
-          <h3 class="prod-name">Immunity Shield</h3>
-          <p class="prod-desc">Elderberry, zinc, and vitamin D in a single daily capsule to keep your immune system resilient year-round.</p>
+          <div class="prod-cat">เสริมภูมิคุ้มกัน</div>
+          <h3 class="prod-name">อิมมูนิตี้ ชิลด์</h3>
+          <p class="prod-desc">เอลเดอร์เบอร์รี่ สังกะสี และวิตามินดี รวมในแคปซูลเดียว เสริมภูมิคุ้มกันให้แข็งแรงตลอดปี</p>
           <div class="prod-foot">
-            <div class="prod-price">฿750 <small>/ 60 capsules</small></div>
-            <button class="prod-btn" aria-label="Add to cart"><i data-lucide="plus"></i></button>
+            <div class="prod-price">฿750 <small>/ 60 แคปซูล</small></div>
+            <button class="prod-btn" aria-label="ใส่ตะกร้า"><i data-lucide="plus"></i></button>
           </div>
         </div>
       </div>
@@ -841,67 +1060,67 @@
     <div class="philosophy-img">
       <img
         src="https://picsum.photos/seed/botanical-herbs-calm/900/800"
-        alt="Our philosophy"
+        alt="แนวคิดของเรา"
       />
     </div>
     <div class="philosophy-body">
-      <div class="philosophy-eyebrow">Our Approach</div>
-      <h2 class="philosophy-title">Wellness Should Be Simple, Not Complicated</h2>
+      <div class="philosophy-eyebrow">แนวทางของเรา</div>
+      <h2 class="philosophy-title">ดูแลสุขภาพควรเป็นเรื่องง่าย ไม่ซับซ้อน</h2>
       <p class="philosophy-text">
-        We believe that caring for your health should feel natural and effortless. Every Mr. Tree product is formulated with a clear purpose — using only what your body truly needs, nothing more, nothing less.
+        เราเชื่อว่าการดูแลสุขภาพควรรู้สึกเป็นธรรมชาติและไม่ยุ่งยาก ผลิตภัณฑ์ทุกชิ้นของ Mr. Tree ถูกสร้างขึ้นด้วยจุดมุ่งหมายที่ชัดเจน — ใส่เฉพาะสิ่งที่ร่างกายต้องการจริงๆ ไม่มากไม่น้อย
       </p>
       <div class="values-grid">
         <div class="value-item">
           <div class="value-icon"><i data-lucide="sprout"></i></div>
-          <div class="value-title">Clean Sourcing</div>
-          <div class="value-desc">Ingredients traced to trusted farms and certified suppliers.</div>
+          <div class="value-title">แหล่งที่มาสะอาด</div>
+          <div class="value-desc">ส่วนผสมมาจากฟาร์มที่เชื่อถือได้และซัพพลายเออร์ที่ผ่านการรับรอง</div>
         </div>
         <div class="value-item">
           <div class="value-icon"><i data-lucide="microscope"></i></div>
-          <div class="value-title">Third-Party Tested</div>
-          <div class="value-desc">Every batch independently verified for purity and potency.</div>
+          <div class="value-title">ตรวจสอบโดยบุคคลที่สาม</div>
+          <div class="value-desc">ทุกรุ่นการผลิตผ่านการตรวจสอบความบริสุทธิ์และประสิทธิผลอย่างอิสระ</div>
         </div>
         <div class="value-item">
           <div class="value-icon"><i data-lucide="heart-pulse"></i></div>
-          <div class="value-title">Clinically Informed</div>
-          <div class="value-desc">Formulas guided by current nutritional science and evidence.</div>
+          <div class="value-title">อิงหลักวิทยาศาสตร์</div>
+          <div class="value-desc">สูตรตำรับที่พัฒนาจากงานวิจัยด้านโภชนาการและหลักฐานทางวิทยาศาสตร์ปัจจุบัน</div>
         </div>
         <div class="value-item">
           <div class="value-icon"><i data-lucide="package-2"></i></div>
-          <div class="value-title">Eco Packaging</div>
-          <div class="value-desc">Sustainable materials with a minimal environmental footprint.</div>
+          <div class="value-title">บรรจุภัณฑ์รักษ์โลก</div>
+          <div class="value-desc">วัสดุยั่งยืนที่ลดผลกระทบต่อสิ่งแวดล้อมให้น้อยที่สุด</div>
         </div>
       </div>
-      <a href="#" class="btn-outline-white">Learn Our Story</a>
+      <a href="#" class="btn-outline-white">อ่านเรื่องราวของเรา</a>
     </div>
   </section>
 
   <!-- Benefits -->
   <section class="section-benefits" id="benefits">
     <div class="benefits-intro">
-      <div class="section-eyebrow">Why Mr. Tree</div>
-      <h2 class="section-title">Trusted by Adults Who Demand More from Their Wellness Routine</h2>
+      <div class="section-eyebrow">ทำไมต้อง Mr. Tree</div>
+      <h2 class="section-title">ไว้วางใจโดยผู้ใหญ่ที่ใส่ใจสุขภาพอย่างจริงจัง</h2>
     </div>
     <div class="benefits-grid">
       <div class="benefit-card">
         <div class="benefit-icon"><i data-lucide="check-circle"></i></div>
-        <h3 class="benefit-title">Clinically Dosed</h3>
-        <p class="benefit-desc">Every ingredient is included at amounts shown to be effective in peer-reviewed research.</p>
+        <h3 class="benefit-title">ปริมาณที่ได้ผลจริง</h3>
+        <p class="benefit-desc">ส่วนผสมทุกชนิดถูกใส่ในปริมาณที่ได้รับการพิสูจน์ประสิทธิผลจากงานวิจัย</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon"><i data-lucide="eye"></i></div>
-        <h3 class="benefit-title">Full Transparency</h3>
-        <p class="benefit-desc">No proprietary blends. You see exactly what is in every product and in what amounts.</p>
+        <h3 class="benefit-title">โปร่งใสเต็มร้อย</h3>
+        <p class="benefit-desc">ไม่มีสูตรลับ คุณเห็นทุกส่วนผสมและปริมาณที่แน่ชัดในทุกผลิตภัณฑ์</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon"><i data-lucide="zap"></i></div>
-        <h3 class="benefit-title">Felt Within Weeks</h3>
-        <p class="benefit-desc">Most customers notice a meaningful difference within the first four weeks of consistent use.</p>
+        <h3 class="benefit-title">เห็นผลภายในไม่กี่สัปดาห์</h3>
+        <p class="benefit-desc">ลูกค้าส่วนใหญ่รู้สึกถึงความแตกต่างอย่างชัดเจนภายใน 4 สัปดาห์แรกของการใช้งานต่อเนื่อง</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon"><i data-lucide="users"></i></div>
-        <h3 class="benefit-title">Expert Backed</h3>
-        <p class="benefit-desc">Formulated with registered dietitians and wellness practitioners based in Thailand.</p>
+        <h3 class="benefit-title">รับรองโดยผู้เชี่ยวชาญ</h3>
+        <p class="benefit-desc">สูตรตำรับพัฒนาร่วมกับนักโภชนาการและผู้เชี่ยวชาญด้านสุขภาพในประเทศไทย</p>
       </div>
     </div>
   </section>
@@ -909,8 +1128,8 @@
   <!-- Testimonials -->
   <section class="section-testimonials">
     <div class="testimonials-head">
-      <div class="section-eyebrow">Customer Stories</div>
-      <h2 class="section-title">Real People, Real Results</h2>
+      <div class="section-eyebrow">เสียงจากลูกค้า</div>
+      <h2 class="section-title">ประสบการณ์จริงจากผู้ใช้จริง</h2>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card">
@@ -918,14 +1137,14 @@
           <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
           <i data-lucide="star"></i><i data-lucide="star"></i>
         </div>
-        <p class="t-text">"After six weeks on Green Balance I have noticeably more energy throughout the day. I no longer reach for an afternoon coffee. Genuinely did not expect this."</p>
+        <p class="t-text">"หลังจากใช้กรีน บาลานซ์ได้หกสัปดาห์ รู้สึกมีพลังงานมากขึ้นอย่างเห็นได้ชัดตลอดทั้งวัน ไม่ต้องง้อกาแฟช่วงบ่ายอีกแล้ว ไม่คาดคิดว่าจะได้ผลขนาดนี้จริงๆ"</p>
         <div class="t-author">
           <div class="t-avatar">
-            <img src="https://picsum.photos/seed/portrait-woman-50/96/96" alt="Siriporn K." />
+            <img src="https://picsum.photos/seed/portrait-woman-50/96/96" alt="ศิริพร ก." />
           </div>
           <div>
-            <div class="t-name">Siriporn K.</div>
-            <div class="t-meta">Age 52 — Bangkok</div>
+            <div class="t-name">ศิริพร ก.</div>
+            <div class="t-meta">อายุ 52 ปี — กรุงเทพฯ</div>
           </div>
         </div>
       </div>
@@ -934,14 +1153,14 @@
           <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
           <i data-lucide="star"></i><i data-lucide="star"></i>
         </div>
-        <p class="t-text">"I am very particular about what I put in my body. Mr. Tree is the first supplement brand I have trusted enough to use regularly. The ingredient transparency is exceptional."</p>
+        <p class="t-text">"ผมใส่ใจมากกับสิ่งที่นำเข้าสู่ร่างกาย Mr. Tree เป็นแบรนด์อาหารเสริมแรกที่ผมไว้วางใจพอจะใช้เป็นประจำ ความโปร่งใสของส่วนผสมยอดเยี่ยมมาก"</p>
         <div class="t-author">
           <div class="t-avatar">
-            <img src="https://picsum.photos/seed/portrait-man-60/96/96" alt="Wanchai P." />
+            <img src="https://picsum.photos/seed/portrait-man-60/96/96" alt="วันชัย พ." />
           </div>
           <div>
-            <div class="t-name">Wanchai P.</div>
-            <div class="t-meta">Age 61 — Chiang Mai</div>
+            <div class="t-name">วันชัย พ.</div>
+            <div class="t-meta">อายุ 61 ปี — เชียงใหม่</div>
           </div>
         </div>
       </div>
@@ -950,14 +1169,14 @@
           <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
           <i data-lucide="star"></i><i data-lucide="star"></i>
         </div>
-        <p class="t-text">"My doctor recommended a good collagen supplement. Radiance Collagen has made a real difference to my joint comfort — especially noticeable in the mornings."</p>
+        <p class="t-text">"คุณหมอแนะนำให้หาคอลลาเจนดีๆ มาทาน เรเดียนซ์ คอลลาเจนช่วยให้ข้อต่อสบายขึ้นจริงๆ รู้สึกได้ชัดเจนโดยเฉพาะตอนเช้า"</p>
         <div class="t-author">
           <div class="t-avatar">
-            <img src="https://picsum.photos/seed/portrait-woman-mature/96/96" alt="Malee T." />
+            <img src="https://picsum.photos/seed/portrait-woman-mature/96/96" alt="มาลี ต." />
           </div>
           <div>
-            <div class="t-name">Malee T.</div>
-            <div class="t-meta">Age 47 — Phuket</div>
+            <div class="t-name">มาลี ต.</div>
+            <div class="t-meta">อายุ 47 ปี — ภูเก็ต</div>
           </div>
         </div>
       </div>
@@ -966,13 +1185,13 @@
 
   <!-- CTA -->
   <section class="section-cta" id="contact">
-    <div class="cta-eyebrow">Start Today</div>
-    <h2 class="cta-title">Your Best Wellness Routine<br>Begins with One Step</h2>
-    <p class="cta-desc">Join over 12,000 people who have made Mr. Tree part of their daily health practice. Free shipping on your first order.</p>
+    <div class="cta-eyebrow">เริ่มต้นวันนี้</div>
+    <h2 class="cta-title">เส้นทางสุขภาพที่ดีที่สุด<br>เริ่มต้นด้วยก้าวแรกเพียงก้าวเดียว</h2>
+    <p class="cta-desc">ร่วมเป็นส่วนหนึ่งกับลูกค้ากว่า 12,000 คนที่ทำให้ Mr. Tree เป็นส่วนหนึ่งของกิจวัตรดูแลสุขภาพประจำวัน จัดส่งฟรีสำหรับการสั่งซื้อครั้งแรก</p>
     <div class="cta-actions">
-      <a href="#products" class="btn-primary">Shop All Products</a>
+      <a href="#products" class="btn-primary">สั่งซื้อสินค้าทั้งหมด</a>
       <a href="#" class="btn-advisor">
-        <i data-lucide="phone"></i> Talk to a Wellness Advisor
+        <i data-lucide="phone"></i> พูดคุยกับผู้เชี่ยวชาญด้านสุขภาพ
       </a>
     </div>
   </section>
@@ -983,7 +1202,7 @@
       <div>
         <div class="footer-brand-name">Mr. Tree</div>
         <div class="footer-brand-th">มิสเตอร์ทรี</div>
-        <p class="footer-brand-desc">Natural wellness products crafted with care for those who take a thoughtful approach to their long-term health.</p>
+        <p class="footer-brand-desc">ผลิตภัณฑ์เพื่อสุขภาพจากธรรมชาติที่สร้างสรรค์ด้วยความใส่ใจ สำหรับผู้ที่มองการดูแลสุขภาพระยะยาวอย่างรอบคอบ</p>
         <div class="footer-social">
           <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
           <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
@@ -991,46 +1210,65 @@
         </div>
       </div>
       <div>
-        <div class="footer-col-title">Products</div>
+        <div class="footer-col-title">สินค้า</div>
         <ul class="footer-links">
-          <li><a href="#">Daily Supplements</a></li>
-          <li><a href="#">Collagen</a></li>
-          <li><a href="#">Immunity</a></li>
-          <li><a href="#">Bundles &amp; Kits</a></li>
-          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">อาหารเสริมประจำวัน</a></li>
+          <li><a href="#">คอลลาเจน</a></li>
+          <li><a href="#">เสริมภูมิคุ้มกัน</a></li>
+          <li><a href="#">ชุดสินค้าและแพ็กเกจ</a></li>
+          <li><a href="#">สินค้ามาใหม่</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Company</div>
+        <div class="footer-col-title">บริษัท</div>
         <ul class="footer-links">
-          <li><a href="#">Our Story</a></li>
-          <li><a href="#">Ingredients</a></li>
-          <li><a href="#">Certifications</a></li>
-          <li><a href="#">Sustainability</a></li>
-          <li><a href="#">Press</a></li>
+          <li><a href="#">เรื่องราวของเรา</a></li>
+          <li><a href="#">ส่วนผสม</a></li>
+          <li><a href="#">การรับรองมาตรฐาน</a></li>
+          <li><a href="#">ความยั่งยืน</a></li>
+          <li><a href="#">สื่อมวลชน</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Support</div>
+        <div class="footer-col-title">บริการลูกค้า</div>
         <ul class="footer-links">
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Shipping Info</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">คำถามที่พบบ่อย</a></li>
+          <li><a href="#">ข้อมูลการจัดส่ง</a></li>
+          <li><a href="#">การคืนสินค้า</a></li>
+          <li><a href="#">ติดต่อเรา</a></li>
           <li><a href="#">Line @mrtree</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Mr. Tree Co., Ltd. All rights reserved.</span>
+      <span>© 2026 บริษัท มิสเตอร์ทรี จำกัด สงวนลิขสิทธิ์ทั้งหมด</span>
       <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="#">นโยบายความเป็นส่วนตัว</a>
+        <a href="#">ข้อกำหนดการใช้งาน</a>
       </div>
     </div>
   </footer>
 
   <script>
+    // Hamburger menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      const isOpen = navLinks.classList.contains('open');
+      navToggle.setAttribute('aria-label', isOpen ? 'ปิดเมนู' : 'เปิดเมนู');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-label', 'เปิดเมนู');
+      });
+    });
+
+    // Initialise Lucide icons (must run after DOM including new icons)
     lucide.createIcons();
 
     // Nav shadow on scroll
