@@ -1,0 +1,26 @@
+{
+  "slug": "mister-tree-c251",
+  "brand_dna": "Mr. Tree (มิสเตอร์ทรี) is a health and wellness product brand targeting adults 40+ who value simplicity and clarity. The brand emphasizes clean, modern design with a light and airy aesthetic that feels contemporary and easy to navigate. The founder wants a minimalist approach with bright, soft tones that conveys trustworthiness and accessibility — no clutter, straightforward product presentation, and clear messaging for this mature demographic.",
+  "variant_count": 3,
+  "client_id": null,
+  "tags": [],
+  "generated_at": "2026-05-27T11:26:44Z",
+  "prompt_template": "variant.md",
+  "actions": [
+    {
+      "type": "generate",
+      "at": "2026-05-27T11:35:52Z",
+      "variants": {
+        "v1": {
+          "size_bytes": 31513
+        },
+        "v2": {
+          "size_bytes": 36476
+        },
+        "v3": {
+          "size_bytes": 35934
+        }
+      }
+    }
+  ]
+}

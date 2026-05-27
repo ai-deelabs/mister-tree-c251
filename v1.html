@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr. Tree | มิสเตอร์ทรี — Natural Wellness</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:       #F9F6F0;
+      --cream-mid:   #EDE8DF;
+      --forest:      #2C4A38;
+      --sage:        #567A65;
+      --sage-light:  #8BAF9A;
+      --gold:        #BF8C3A;
+      --text:        #1E2D25;
+      --muted:       #6E7D75;
+      --white:       #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 72px;
+      background: rgba(249, 246, 240, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(44, 74, 56, 0.08);
+      padding: 0 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: box-shadow 0.3s;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+      text-decoration: none;
+    }
+    .nav-logo-en {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 21px;
+      font-weight: 400;
+      color: var(--forest);
+      letter-spacing: 0.04em;
+    }
+    .nav-logo-th {
+      font-size: 11px;
+      color: var(--sage);
+      letter-spacing: 0.12em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--forest); }
+
+    .nav-cta {
+      background: var(--forest) !important;
+      color: var(--white) !important;
+      padding: 10px 26px;
+      border-radius: 2px;
+      font-size: 13px !important;
+      letter-spacing: 0.09em !important;
+      text-transform: uppercase;
+    }
+    .nav-cta:hover { background: var(--sage) !important; }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      padding-top: 72px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px 80px 80px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(38px, 4.2vw, 68px);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--forest);
+      margin-bottom: 28px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--sage);
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 440px;
+      margin-bottom: 52px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--forest);
+      color: var(--white);
+      padding: 16px 42px;
+      border: none;
+      border-radius: 2px;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--sage); }
+
+    .btn-text {
+      color: var(--forest);
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.25s;
+    }
+    .btn-text:hover { gap: 13px; }
+    .btn-text i { width: 16px; height: 16px; }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 48px;
+      left: -20px;
+      background: var(--white);
+      padding: 22px 36px 22px 28px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+    }
+    .hero-badge-num {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      color: var(--forest);
+      line-height: 1;
+    }
+    .hero-badge-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ── Trust Strip ── */
+    .trust-strip {
+      background: var(--forest);
+      padding: 18px 0;
+      overflow: hidden;
+    }
+    .trust-inner {
+      display: flex;
+      gap: 0;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.65);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 0 40px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-item i { color: var(--gold); flex-shrink: 0; }
+
+    /* ── Products ── */
+    .section-products {
+      padding: 108px 80px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: clamp(26px, 2.8vw, 42px);
+      font-weight: 400;
+      color: var(--forest);
+      line-height: 1.2;
+    }
+    .section-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .link-arrow {
+      color: var(--sage);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--sage-light);
+      transition: gap 0.2s, border-color 0.2s;
+    }
+    .link-arrow:hover { gap: 13px; border-color: var(--sage); }
+    .link-arrow i { width: 15px; height: 15px; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .product-card {
+      background: var(--white);
+      overflow: hidden;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .product-card:hover { transform: translateY(-6px); }
+    .product-card:hover .prod-img img { transform: scale(1.04); }
+
+    .prod-img {
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    .prod-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s;
+    }
+    .prod-badge {
+      position: absolute;
+      top: 18px; left: 18px;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+    }
+
+    .prod-body {
+      padding: 26px 28px 28px;
+      border-top: 2px solid var(--forest);
+    }
+    .prod-cat {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 6px;
+    }
+    .prod-name {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .prod-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+    .prod-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .prod-price {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      color: var(--forest);
+    }
+    .prod-price small {
+      font-family: -apple-system, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .prod-btn {
+      width: 40px; height: 40px;
+      border: 1px solid var(--forest);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--forest);
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .prod-btn:hover { background: var(--forest); color: var(--white); }
+    .prod-btn i { width: 18px; height: 18px; }
+
+    /* ── Philosophy ── */
+    .section-philosophy {
+      background: var(--forest);
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 700px;
+    }
+    .philosophy-img {
+      overflow: hidden;
+    }
+    .philosophy-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .philosophy-body {
+      padding: 96px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .philosophy-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .philosophy-title {
+      font-family: Georgia, serif;
+      font-size: clamp(26px, 2.6vw, 40px);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.22;
+      margin-bottom: 24px;
+    }
+    .philosophy-text {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.85;
+      margin-bottom: 48px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 52px;
+    }
+    .value-item { display: flex; flex-direction: column; gap: 6px; }
+    .value-icon { color: var(--gold); margin-bottom: 2px; }
+    .value-icon i { width: 20px; height: 20px; }
+    .value-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.03em;
+    }
+    .value-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+    .btn-outline-white {
+      border: 1px solid rgba(255,255,255,0.35);
+      color: var(--white);
+      padding: 14px 38px;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      align-self: flex-start;
+      transition: all 0.2s;
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: var(--white);
+    }
+
+    /* ── Benefits ── */
+    .section-benefits {
+      background: var(--cream-mid);
+      padding: 108px 80px;
+    }
+    .benefits-intro {
+      max-width: 560px;
+      margin: 0 auto 72px;
+      text-align: center;
+    }
+    .benefits-intro .section-title { margin-top: 10px; }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+    .benefit-card {
+      background: var(--white);
+      padding: 40px 28px;
+      text-align: center;
+    }
+    .benefit-icon {
+      width: 56px; height: 56px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 22px;
+      color: var(--sage);
+    }
+    .benefit-icon i { width: 22px; height: 22px; }
+    .benefit-title {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      color: var(--forest);
+      margin-bottom: 10px;
+    }
+    .benefit-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── Testimonials ── */
+    .section-testimonials {
+      background: var(--white);
+      padding: 108px 80px;
+    }
+    .testimonials-head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .testimonials-head .section-title { margin-top: 10px; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--cream);
+      padding: 36px;
+    }
+    .t-rating {
+      display: flex;
+      gap: 3px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .t-rating i { width: 15px; height: 15px; fill: currentColor; }
+    .t-text {
+      font-family: Georgia, serif;
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+    .t-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .t-avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .t-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .t-name { font-size: 14px; font-weight: 600; color: var(--forest); }
+    .t-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── CTA ── */
+    .section-cta {
+      background: var(--sage-light);
+      padding: 96px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-cta::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: -80px;
+      width: 440px; height: 440px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      pointer-events: none;
+    }
+    .section-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -90px; right: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      pointer-events: none;
+    }
+    .cta-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--forest);
+      opacity: 0.55;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-title {
+      font-family: Georgia, serif;
+      font-size: clamp(26px, 3vw, 46px);
+      font-weight: 400;
+      color: var(--forest);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-desc {
+      font-size: 16px;
+      color: var(--forest);
+      opacity: 0.7;
+      max-width: 480px;
+      margin: 0 auto 40px;
+      line-height: 1.75;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-advisor {
+      color: var(--forest);
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .btn-advisor:hover { opacity: 1; }
+    .btn-advisor i { width: 16px; height: 16px; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.55);
+      padding: 72px 80px 40px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 32px;
+    }
+    .footer-brand-name {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+    .footer-brand-th {
+      font-size: 11px;
+      color: var(--sage-light);
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+    }
+    .footer-brand-desc {
+      font-size: 14px;
+      line-height: 1.75;
+      max-width: 280px;
+      margin-bottom: 28px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    .footer-social a {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .footer-social a:hover { border-color: var(--sage-light); color: var(--sage-light); }
+    .footer-social i { width: 15px; height: 15px; }
+
+    .footer-col-title {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-legal a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      font-size: 12px;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-en">Mr. Tree</span>
+      <span class="nav-logo-th">มิสเตอร์ทรี</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#philosophy">About</a></li>
+      <li><a href="#benefits">Wellness</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#products" class="nav-cta">Shop Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Natural Wellness Since 2019</div>
+      <h1 class="hero-title">
+        Nourish Your<br>Body with<br><em>Nature's Best</em>
+      </h1>
+      <p class="hero-desc">
+        Thoughtfully crafted health supplements designed for those who believe the best years are still ahead. Clean ingredients, clear benefits, no compromise.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">Explore Products</a>
+        <a href="#philosophy" class="btn-text">
+          Our Story <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <img
+        src="https://picsum.photos/seed/botanicals-morning/900/1000"
+        alt="Natural wellness ingredients"
+      />
+      <div class="hero-badge">
+        <div class="hero-badge-num">12,000+</div>
+        <div class="hero-badge-label">Satisfied Customers</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <div class="trust-strip">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <i data-lucide="leaf"></i> All Natural Ingredients
+      </div>
+      <div class="trust-item">
+        <i data-lucide="shield-check"></i> GMP Certified
+      </div>
+      <div class="trust-item">
+        <i data-lucide="flask-conical"></i> Lab Tested
+      </div>
+      <div class="trust-item">
+        <i data-lucide="truck"></i> Free Shipping Over ฿800
+      </div>
+      <div class="trust-item">
+        <i data-lucide="rotate-ccw"></i> 30-Day Returns
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <section class="section-products" id="products">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">Curated for You</div>
+        <h2 class="section-title">Featured<br>Wellness Products</h2>
+      </div>
+      <a href="#" class="link-arrow">View All Products <i data-lucide="arrow-right"></i></a>
+    </div>
+
+    <div class="products-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="prod-img">
+          <img src="https://picsum.photos/seed/green-supplement/600/400" alt="Green Balance" />
+          <div class="prod-badge">Bestseller</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Daily Supplement</div>
+          <h3 class="prod-name">Green Balance</h3>
+          <p class="prod-desc">A complete daily greens formula with 22 plant-based ingredients to support energy, digestion, and vitality.</p>
+          <div class="prod-foot">
+            <div class="prod-price">฿890 <small>/ 30 servings</small></div>
+            <button class="prod-btn" aria-label="Add to cart"><i data-lucide="plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="prod-img">
+          <img src="https://picsum.photos/seed/collagen-skin/600/400" alt="Radiance Collagen" />
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Skin &amp; Joints</div>
+          <h3 class="prod-name">Radiance Collagen</h3>
+          <p class="prod-desc">Marine-sourced collagen peptides with vitamin C for visible skin support and comfortable joint flexibility.</p>
+          <div class="prod-foot">
+            <div class="prod-price">฿1,290 <small>/ 30 sachets</small></div>
+            <button class="prod-btn" aria-label="Add to cart"><i data-lucide="plus"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="prod-img">
+          <img src="https://picsum.photos/seed/elderberry-immunity/600/400" alt="Immunity Shield" />
+          <div class="prod-badge">New</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Immune Support</div>
+          <h3 class="prod-name">Immunity Shield</h3>
+          <p class="prod-desc">Elderberry, zinc, and vitamin D in a single daily capsule to keep your immune system resilient year-round.</p>
+          <div class="prod-foot">
+            <div class="prod-price">฿750 <small>/ 60 capsules</small></div>
+            <button class="prod-btn" aria-label="Add to cart"><i data-lucide="plus"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="section-philosophy" id="philosophy">
+    <div class="philosophy-img">
+      <img
+        src="https://picsum.photos/seed/botanical-herbs-calm/900/800"
+        alt="Our philosophy"
+      />
+    </div>
+    <div class="philosophy-body">
+      <div class="philosophy-eyebrow">Our Approach</div>
+      <h2 class="philosophy-title">Wellness Should Be Simple, Not Complicated</h2>
+      <p class="philosophy-text">
+        We believe that caring for your health should feel natural and effortless. Every Mr. Tree product is formulated with a clear purpose — using only what your body truly needs, nothing more, nothing less.
+      </p>
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="value-icon"><i data-lucide="sprout"></i></div>
+          <div class="value-title">Clean Sourcing</div>
+          <div class="value-desc">Ingredients traced to trusted farms and certified suppliers.</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><i data-lucide="microscope"></i></div>
+          <div class="value-title">Third-Party Tested</div>
+          <div class="value-desc">Every batch independently verified for purity and potency.</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><i data-lucide="heart-pulse"></i></div>
+          <div class="value-title">Clinically Informed</div>
+          <div class="value-desc">Formulas guided by current nutritional science and evidence.</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><i data-lucide="package-2"></i></div>
+          <div class="value-title">Eco Packaging</div>
+          <div class="value-desc">Sustainable materials with a minimal environmental footprint.</div>
+        </div>
+      </div>
+      <a href="#" class="btn-outline-white">Learn Our Story</a>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="section-benefits" id="benefits">
+    <div class="benefits-intro">
+      <div class="section-eyebrow">Why Mr. Tree</div>
+      <h2 class="section-title">Trusted by Adults Who Demand More from Their Wellness Routine</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i data-lucide="check-circle"></i></div>
+        <h3 class="benefit-title">Clinically Dosed</h3>
+        <p class="benefit-desc">Every ingredient is included at amounts shown to be effective in peer-reviewed research.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i data-lucide="eye"></i></div>
+        <h3 class="benefit-title">Full Transparency</h3>
+        <p class="benefit-desc">No proprietary blends. You see exactly what is in every product and in what amounts.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i data-lucide="zap"></i></div>
+        <h3 class="benefit-title">Felt Within Weeks</h3>
+        <p class="benefit-desc">Most customers notice a meaningful difference within the first four weeks of consistent use.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i data-lucide="users"></i></div>
+        <h3 class="benefit-title">Expert Backed</h3>
+        <p class="benefit-desc">Formulated with registered dietitians and wellness practitioners based in Thailand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-testimonials">
+    <div class="testimonials-head">
+      <div class="section-eyebrow">Customer Stories</div>
+      <h2 class="section-title">Real People, Real Results</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="t-rating">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+          <i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="t-text">"After six weeks on Green Balance I have noticeably more energy throughout the day. I no longer reach for an afternoon coffee. Genuinely did not expect this."</p>
+        <div class="t-author">
+          <div class="t-avatar">
+            <img src="https://picsum.photos/seed/portrait-woman-50/96/96" alt="Siriporn K." />
+          </div>
+          <div>
+            <div class="t-name">Siriporn K.</div>
+            <div class="t-meta">Age 52 — Bangkok</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-rating">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+          <i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="t-text">"I am very particular about what I put in my body. Mr. Tree is the first supplement brand I have trusted enough to use regularly. The ingredient transparency is exceptional."</p>
+        <div class="t-author">
+          <div class="t-avatar">
+            <img src="https://picsum.photos/seed/portrait-man-60/96/96" alt="Wanchai P." />
+          </div>
+          <div>
+            <div class="t-name">Wanchai P.</div>
+            <div class="t-meta">Age 61 — Chiang Mai</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="t-rating">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+          <i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="t-text">"My doctor recommended a good collagen supplement. Radiance Collagen has made a real difference to my joint comfort — especially noticeable in the mornings."</p>
+        <div class="t-author">
+          <div class="t-avatar">
+            <img src="https://picsum.photos/seed/portrait-woman-mature/96/96" alt="Malee T." />
+          </div>
+          <div>
+            <div class="t-name">Malee T.</div>
+            <div class="t-meta">Age 47 — Phuket</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta" id="contact">
+    <div class="cta-eyebrow">Start Today</div>
+    <h2 class="cta-title">Your Best Wellness Routine<br>Begins with One Step</h2>
+    <p class="cta-desc">Join over 12,000 people who have made Mr. Tree part of their daily health practice. Free shipping on your first order.</p>
+    <div class="cta-actions">
+      <a href="#products" class="btn-primary">Shop All Products</a>
+      <a href="#" class="btn-advisor">
+        <i data-lucide="phone"></i> Talk to a Wellness Advisor
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Mr. Tree</div>
+        <div class="footer-brand-th">มิสเตอร์ทรี</div>
+        <p class="footer-brand-desc">Natural wellness products crafted with care for those who take a thoughtful approach to their long-term health.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Products</div>
+        <ul class="footer-links">
+          <li><a href="#">Daily Supplements</a></li>
+          <li><a href="#">Collagen</a></li>
+          <li><a href="#">Immunity</a></li>
+          <li><a href="#">Bundles &amp; Kits</a></li>
+          <li><a href="#">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Ingredients</a></li>
+          <li><a href="#">Certifications</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Support</div>
+        <ul class="footer-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Line @mrtree</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mr. Tree Co., Ltd. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Nav shadow on scroll
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 24
+        ? '0 4px 24px rgba(0,0,0,0.07)'
+        : 'none';
+    }, { passive: true });
+
+    // Prevent dead # links
+    document.querySelectorAll('a[href="#"]').forEach(a => {
+      a.addEventListener('click', e => e.preventDefault());
+    });
+
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        if (!id) return;
+        const target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
