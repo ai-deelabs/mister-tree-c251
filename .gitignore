@@ -2,4 +2,5 @@ meta.json
 .claude-*.log
 .omc/
 edit-sessions/
+.DS_Store
 # project.json and .prompts/ are tracked (generation metadata + audit trail)
